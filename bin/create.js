@@ -2,7 +2,7 @@ const readFile = require('./read-file');
 const typeBase = require('./type-base');
 const readBase = require('./file/base');
 const readBloc = require('./file/bloc');
-// const readEvent = require('./file/event');
+const readProject = require('./file/project');
 const createFile = require('./create-file');
 
 module.exports = async (name, cmd) => {
@@ -13,7 +13,7 @@ module.exports = async (name, cmd) => {
 
     // BLOC
     const stringFileBloc = await readFile(typeBase.BLOC);
-    const stringFileFinalBloc = readBloc(stringFileBloc, name);
+    const stringFileFinalBloc = readBase(readBloc(stringFileBloc, name), name);
     createFile(stringFileFinalBloc, name, typeBase.BLOC);
 
     // EVENT
@@ -28,12 +28,12 @@ module.exports = async (name, cmd) => {
 
     // PAGE
     const stringFilePage = await readFile(typeBase.PAGE);
-    const stringFileFinalPage = readBase(readBloc(stringFilePage, name), name);
+    const stringFileFinalPage = readBase(readBloc(readProject(stringFilePage), name), name);
     createFile(stringFileFinalPage, name, typeBase.PAGE);
 
     // CONTENT
     const stringFileContent = await readFile(typeBase.CONTENT);
-    const stringFileFinalContent = readBase(readBloc(stringFileContent, name), name);
+    const stringFileFinalContent = readBase(readBloc(readProject(stringFileContent), name), name);
     createFile(stringFileFinalContent, name, typeBase.CONTENT);
 
     // TEST

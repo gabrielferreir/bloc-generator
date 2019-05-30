@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:acif_mobile/analytics.dart';
+import 'package:base_project/analytics.dart';
 import 'base.dart';
 
 class BasePage extends StatefulWidget {

@@ -4,13 +4,13 @@ import 'package:meta/meta.dart';
 @immutable
 class BaseState extends Equatable {
 
-  BaseState({}): super([]);
+  BaseState() : super([]);
 
   factory BaseState.initial() {
     return BaseState();
   }
 
-  BaseState copyWith({}) {
+  BaseState copyWith() {
     return BaseState();
   }
 

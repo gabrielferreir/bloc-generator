@@ -4,9 +4,10 @@ const typeBase = require('./type-base');
 
 
 module.exports = async (type) => {
-    console.log(__dirname);
-    console.log(process.cwd());
-    console.log(path.join(__dirname, '..', 'bloc', 'base.dart'));
+    // console.log(__dirname);
+    // console.log(process.cwd());
+    // console.log(path.join(__dirname, '..', 'bloc', 'base.dart'));
+    // console.log('process.cwd()', process.cwd().toString().split('\\'));
     switch (type) {
         case typeBase.BASE:
             return await fs.readFileSync(path.join(__dirname, '..', 'bloc', 'base.dart'), "utf8");

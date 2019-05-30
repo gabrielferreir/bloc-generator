@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:base_project/analytics.dart';
 import 'base.dart';
 
 class BaseContent extends StatefulWidget {
@@ -18,7 +19,7 @@ class _BaseContentState extends State<BaseContent> {
   Widget build(BuildContext context) {
     return BlocBuilder(
         bloc: widget.baseBloc,
-        builder: (BuildContext context, CampaignState state) {
+        builder: (BuildContext context, BaseState state) {
           return Container();
         });
   }
